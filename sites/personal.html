@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码验证（加密版）</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            max-width: 300px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>请输入密码</h2>
+    <input type="password" id="password" placeholder="输入密码">
+    <br>
+    <button id="submitBtn" onclick="checkPassword()">提交</button>
+    <p id="msg" style="color:red;"></p>
+</div>
+
+<script>
+    let attempts = 0;
+    const maxAttempts = 3;
+    const lockTime = 30; // 锁定秒数
+
+    // 这里存的是密码 SHA-256 哈希值（64位十六进制字符串）
+    const correctHash = "384fde3636e6e01e0194d2976d8f26410af3e846e573379cb1a09e2f0752d8cc"
+
+    // 把字符串转成SHA-256哈希
+    async function sha256(str) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(str);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function checkPassword() {
+        const inputPassword = document.getElementById("password").value;
+        const msg = document.getElementById("msg");
+        const btn = document.getElementById("submitBtn");
+
+        if (attempts >= maxAttempts) {
+            msg.textContent = "已锁定，请稍后再试！";
+            return;
+        }
+
+        const hash = await sha256(inputPassword);
+        if (hash === correctHash) {
+            window.location.href = "success.html";
+        } else {
+            attempts++;
+            if (attempts >= maxAttempts) {
+                msg.textContent = `错误次数过多，锁定 ${lockTime} 秒！`;
+                btn.disabled = true;
+                startLockCountdown(lockTime);
+            } else {
+                msg.textContent = `密码错误！剩余次数：${maxAttempts - attempts}`;
+            }
+        }
+    }
+
+    function startLockCountdown(seconds) {
+        const btn = document.getElementById("submitBtn");
+        const msg = document.getElementById("msg");
+        let remaining = seconds;
+
+        const countdown = setInterval(() => {
+            remaining--;
+            msg.textContent = `已锁定，请等待 ${remaining} 秒再试！`;
+            if (remaining <= 0) {
+                clearInterval(countdown);
+                attempts = 0;
+                btn.disabled = false;
+                msg.textContent = "你可以再次尝试输入密码";
+            }
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
