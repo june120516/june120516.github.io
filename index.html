@@ -1,78 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大运科技</title>
-    <style>
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-        nav {
-            background: #444;
-            text-align: center;
-            padding: 0.5rem;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        article {
-            margin-bottom: 2rem;
-        }
-        article h2 {
-            color: #333;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: white;
-            margin-top: 2rem;
-        }
-    </style>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学信网</title>
+  <style>
+    :root {
+      --primary-color: #4a6cf7;
+      --secondary-color: #f0f2ff;
+      --text-color: #333;
+      --light-text: #666;
+      --border-color: #e0e4ff;
+      --success-color: #4caf50;
+      --warning-color: #ff9800;
+      --danger-color: #f44336;
+      --bg-color: #fff;
+      --card-bg: #f9fafc;
+      --transition: all 0.3s ease;
+    }
 
-<header>
-    <h1>大运科技</h1>
-    <p>分享我的地壳爆炸了！</p>
-</header>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-<nav>
-    <a href="index.html">首页</a>
-    <a href="sites/personal.html">管理员</a>
-</nav>
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
 
-<main>
-    <article>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-    </article>
-</main>
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px 0;
+    }
 
-<footer>
-    <p>&copy; 我的地壳爆炸了！</p>
-</footer>
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
 
-</body>
-</html>
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 18px 40px 18px 20px;
+      border: 2px solid var(--border-color);
+      border-radius: 30px;
+      font-size: 1.1rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba
