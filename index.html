@@ -1,89 +1,279 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>学信网</title>
-  <style>
-    :root {
-      --primary-color: #4a6cf7;
-      --secondary-color: #f0f2ff;
-      --text-color: #333;
-      --light-text: #666;
-      --border-color: #e0e4ff;
-      --success-color: #4caf50;
-      --warning-color: #ff9800;
-      --danger-color: #f44336;
-      --bg-color: #fff;
-      --card-bg: #f9fafc;
-      --transition: all 0.3s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大运科技</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        article {
+            margin-bottom: 2rem;
+        }
+        article h2 {
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<header>
+    <h1>大运科技</h1>
+    <p>分享我的地壳爆炸了！</p>
+</header>
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
-    }
+<nav>
+    <a href="index.html">首页</a>
+    <a href="sites/personal.html">管理员</a>
+</nav>
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+<main>
+    <article>
+        <pre>
+            名字: 张彦熙
+            证件: 331102201204280021
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-04-28
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区瑞光花苑4幢四单元206室
+        </pre>
+        <pre>
+            名字: 吴祉逸
+            证件: 331102201110151229
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2011-10-15
+            年龄: 13岁
+            生肖: 卯兔
+            户籍: 浙江省丽水市莲都区九里村177号
+        </pre>
+        <pre>
+            名字: 许嘉珈
+            证件: 331102201111010444
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2011-11-01
+            年龄: 13岁
+            生肖: 卯兔
+            户籍: 浙江省丽水市莲都区灯塔街127号-1号301室
+        </pre>
+        <pre>
+            名字: 麻舒然
+            证件: 331102201205230026
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-05-23
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区新华弄1号201室
+        </pre>
+        <pre>
+           名字: 王一诺
+            证件: 331121201206230027
+            出生: 浙江省丽水市青田县
+            性别: 女
+            生日: 2012-06-23
+            年龄: 12岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区汇洋新村4幢502室
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 20px 0;
-    }
+            名字: 王一诺
+            证件: 331121201204151608
+            出生: 浙江省丽水市青田县
+            性别: 女
+            生日: 2012-04-15
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省青田县鹤城街道新建岭小区24幢1单元802室
 
-    h1 {
-      color: var(--primary-color);
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      position: relative;
-      display: inline-block;
-    }
+            名字: 王一诺
+            证件: 331123201206290014
+            出生: 浙江省丽水市遂昌县
+            性别: 男
+            生日: 2012-06-29
+            年龄: 12岁
+            生肖: 辰龙
+            户籍: 浙江省遂昌县妙高街道牡丹亭路池莲区块15幢105室
 
-    h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(to right, transparent, var(--primary-color), transparent);
-    }
+            名字: 王一诺
+            证件: 33112220120827453X
+            出生: 浙江省丽水市缙云县
+            性别: 男
+            生日: 2012-08-27
+            年龄: 12岁
+            生肖: 辰龙
+            户籍: 浙江省缙云县壶镇镇苍源村苍岭脚苍心路南一巷4号 
+        </pre>
+        <pre>
+            名字: 吴霖熙
+            证件: 331122201201095168
+            出生: 浙江省丽水市缙云县
+            性别: 女
+            生日: 2012-01-09
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省缙云县新建镇笕川村笕溪北路12号
 
-    .search-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 800px;
-      margin: 0 auto 50px;
-      position: relative;
-    }
+            名字: 吴霖熙
+            证件: 331122201201095168
+            出生: 浙江省丽水市缙云县
+            性别: 女
+            生日: 2012-01-09
+            年龄: 13岁
+            生肖: 辰龙
+            手机: 13587199883 [浙江丽水移动]
 
-    .search-input {
-      width: 100%;
-      padding: 18px 40px 18px 20px;
-      border: 2px solid var(--border-color);
-      border-radius: 30px;
-      font-size: 1.1rem;
-      outline: none;
-      transition: var(--transition);
-    }
+            名字: 吴霖熙
+            证件: 331122201201095168
+            出生: 浙江省丽水市缙云县
+            性别: 女
+            生日: 2012-01-09
+            年龄: 13岁
+            生肖: 辰龙
+            手机: 13587199883 [浙江丽水移动]
+            户籍: 浙江省丽水市缙云县
+            面貌: 群众
+            志愿: 丽水市文化和广电旅游体育局文化和旅游志愿者支队 景宁畲族自治县文化和旅游志愿者大队 景宁畲族博物馆小小讲解员志愿者队伍; 景宁县平安志愿者 县级社会公益志愿服务队 景宁畲族博物馆小小讲解员志愿者队伍
+        </pre>
+        <pre>
+            名字: 张若涵
+            证件: 331126201109190061
+            出生: 浙江省丽水市庆元县
+            性别: 女
+            生日: 2011-09-19
+            年龄: 13岁
+            生肖: 卯兔
+            户籍: 浙江省庆元县濛洲街道东门新村东四弄11号
+        </pre>
+        <pre>
+            名字: 徐欣悦
+            证件: 331102201204140029
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-04-14
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区灯塔街127-3号203室
+        </pre>
+        <pre>
+            名字: 胡芮雪
+            证件: 331102201201110422
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-01-11
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区
+        </pre>
+        <pre>
+            名字: 侯武略
+            证件: 33038220120812495X
+            出生: 浙江省温州市乐清市
+            性别: 男
+            生日: 2012-08-12
+            年龄: 12岁
+            生肖: 辰龙
+            户籍: 浙江省乐清市蒲岐镇北门街66号
+        </pre>
+        <pre>
+            名字: 朱晨瑜
+            证件: 331102201205280023
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-05-28
+            年龄: 13岁
+            生肖: 辰龙
 
-    .search-input:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba
+            名字: 朱晨瑜
+            证件: 331122201209195120
+            出生: 浙江省丽水市缙云县
+            性别: 女
+            生日: 2012-09-19
+            年龄: 12岁
+            生肖: 辰龙
+
+            名字: 朱晨瑜
+            证件: 331102201205052821
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-05-05
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区叶村村41号
+
+            名字: 朱晨瑜
+            证件: 331122201209195139
+            出生: 浙江省丽水市缙云县
+            性别: 男
+            生日: 2012-09-19
+            年龄: 12岁
+            生肖: 辰龙
+            户籍: 浙江省缙云县新建镇河阳村河西18-1号
+
+            名字: 朱晨瑜
+            证件: 331102201205280023
+            出生: 浙江省丽水市莲都区
+            性别: 女
+            生日: 2012-05-28
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区高井弄33号
+        </pre>
+        <pre>
+            名字: 韦竣潇
+            证件: 331102201205110016
+            出生: 浙江省丽水市莲都区
+            性别: 男
+            生日: 2012-05-11
+            年龄: 13岁
+            生肖: 辰龙
+            户籍: 浙江省丽水市莲都区城东路109号105室
+        </pre>
+    </article>
+</main>
+
+<footer>
+    <p>&copy; 我的地壳爆炸了！</p>
+</footer>
+
+</body>
+</html>
